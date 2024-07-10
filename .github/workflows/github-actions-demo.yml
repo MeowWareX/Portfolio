@@ -1,0 +1,65 @@
+name: Deploy to EC2 on Demo branch
+
+on:
+  push:
+    branches:
+      - demo
+
+jobs:
+  translate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      if: contains(github.event.head_commit.message, 'translate')
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Translate PHP files
+      if: contains(github.event.head_commit.message, 'translate')
+      run: python scripts/translate_php.py
+
+    - name: Commit translation file
+      if: contains(github.event.head_commit.message, 'translate')
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add langue/en.json
+        git commit -m "Update en.json with translations" || echo "No changes to commit"
+        git push
+
+    - name: Copy files via ssh
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.ORGANIZATION_HOST }}
+        username: ubuntu
+        key: ${{ secrets.ORGANIZATION_SSH_KEY }}
+        source: "."
+        target: "/home/ubuntu"
+
+    - name: Move files to the correct directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.ORGANIZATION_HOST }}
+        username: ubuntu
+        key: ${{ secrets.ORGANIZATION_SSH_KEY }}
+        script: |
+          repo_name="${{ github.repository }}"
+          target_folder=${repo_name##*/}
+          sudo rm -rf /var/www/html/demo/$target_folder/*
+          sudo mkdir -p /var/www/html/demo/$target_folder
+          # Move all non-hidden files
+          sudo mv -f /home/ubuntu/* /var/www/html/demo/$target_folder/
+          # Move .htaccess if it exists
+          if [ -f /home/ubuntu/.htaccess ]; then
+              sudo mv -f /home/ubuntu/.htaccess /var/www/html/demo/$target_folder/
+          fi
+          sudo chown -R ftpuser:ubuntu /var/www/html/demo/$target_folder

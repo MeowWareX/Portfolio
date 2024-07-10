@@ -1,0 +1,16 @@
+{ 
+  "main": {
+    "restrictions":null,                              
+    "required_status_checks": null,
+    "enforce_admins": null,
+    "required_linear_history": null,
+    "required_pull_request_reviews": {
+      "dismiss_stale_reviews": true,
+      "require_code_owner_reviews": true,
+      "required_approving_review_count": 2,
+      "bypass_pull_request_allowances": {
+        "teams": ["admins"]
+      }
+    }
+  }
+}

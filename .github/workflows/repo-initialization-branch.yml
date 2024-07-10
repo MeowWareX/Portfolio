@@ -1,0 +1,31 @@
+name: Initialization Workflow
+on:
+  create
+
+jobs:
+  build:
+    if: github.event.ref == github.event.master_branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate file with repository name
+        run: echo ${{ github.event.repository.name }} > .github/ruleSets/includedRepos.txt
+        
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .github/ruleSets/includedRepos.txt
+          git commit -m "Add includedRepos.txt with repository name"
+          git push
+
+      - name: Run Branch Protection
+        uses: venh/branch-protection@v1.1.0
+        with:
+          token: ${{ secrets.PAT_ALEX }}
+          org: DevXpressInc
+          includedReposPath: ./.github/ruleSets/includedRepos.txt
+          rulesPath:  ./.github/ruleSets/rules.json
+          action: add

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<?php include './functions/translate.php'; ?>
+
+<html lang="<?= __("fr") ?>">
+
+    <?php
+    $pageTitle = "Services d'aménagement extérieur résidentiel | Progakis";
+    $pageDescription = "Progakis est le spécialiste de l'aménagement extérieur résidentiel, desservant Laval et le Grand Montréal. Notre équipe offre des services de qualité en béton, construction de piscines, déneigement, et plus encore. Contactez-nous pour métamorphoser votre espace extérieur en un cadre de vie idyllique.";
+    $pageKeywords = "aménagement extérieur, services résidentiels, béton, piscine, déneigement, compagnie d'aménagement extérieur, construction piscine, services de béton, Laval, Grand Montréal";
+
+    $pageUrl = "https://progakis.ca";
+    $siteImg = "https://progakis.ca/img/logo-progakis.png";
+    $siteName = "Progakis";
+    $twitterSite = "@progakis";
+    $siteShortUrl = "progakis.ca";
+
+    $appleIcon = "https://progakis.ca/img/logo-progakis.png";
+    $mediumIcon = "https://progakis.ca/img/favicon-32x32.png";
+    $smallIcon = "https://progakis.ca/img/favicon-16x16.png";
+
+    $favicon = "img/logo-progakis.png";
+
+    $tileColor = "#ffffff";
+    $themeColor = "#f8f9fa";
+    ?>
+    
+    <?php include './components/head.php';?>
