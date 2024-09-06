@@ -34,6 +34,9 @@
 	<!-- <link rel="stylesheet" href="demos/ebook/ebook.css" /> -->
 	<!-- <link rel="stylesheet" href="demos/corporate/corporate.css" /> -->
 
+	<!-- Script EmailJs -->
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 
 <body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#252840">
@@ -472,28 +475,25 @@
 								data-fancy-text='{ "effect": "rotate", "string": ["Buenos dias!", "como estas?", "Queremos ayudarte", "es un placer"] }'></span>
 						</h2>
 						<!-- start contact form -->
-						<form action="email-templates/contact-form.php" method="post">
+						<form id="contact-form">
 							<div class="position-relative form-group mb-15px">
 								<span class="form-icon text-dark-gray"><i
 										class="bi bi-person icon-extra-medium"></i></span>
 								<input
 									class="ps-0 border-radius-0px border-bottom bg-transparent border-1 border-color-extra-medium-gray form-control required"
-									type="text" name="name" placeholder="Ingresa tu nombre*">
+									type="text" name="name" placeholder="Ingresa tu nombre*" required>
 							</div>
 							<div class="position-relative form-group mb-15px">
 								<span class="form-icon text-dark-gray"><i
 										class="bi bi-envelope icon-extra-medium"></i></span>
 								<input
 									class="ps-0 border-radius-0px border-bottom bg-transparent border-1 border-color-extra-medium-gray form-control required"
-									type="email" name="email" placeholder="Ingresa tu correo*">
+									type="email" name="email" placeholder="Ingresa tu correo*" required>
 							</div>
 							<div class="position-relative form-group form-textarea mt-15px mb-25px">
 								<textarea
 									class="ps-0 border-radius-0px border-bottom bg-transparent border-1 border-color-extra-medium-gray form-control"
-									name="comment" placeholder="Ingresa tu mensaje " rows="3"></textarea>
-								<span class="form-icon text-dark-gray"><i
-										class="bi bi-chat-square-dots icon-extra-medium"></i></span>
-								<input type="hidden" name="redirect" value="">
+									name="comment" placeholder="Ingresa tu mensaje" rows="3" required></textarea>
 								<button
 									class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow mt-30px submit w-100 fw-400"
 									type="submit">Enviar mensaje</button>
@@ -726,6 +726,31 @@
 	<!-- slider revolution core javaScript files -->
 	<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
 	<script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Script email sender -->
+	<!-- <script src="js/email-sender.js"></script> -->
+
+	<script>
+		(function() {
+		  emailjs.init("r8F5vaNt1dMwlDO9F");
+		})();
+	
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+		  event.preventDefault();
+	
+		  const formData = new FormData(this);
+		  const formObject = Object.fromEntries(formData);
+	
+		  emailjs.send('service_4rw77gq', 'template_ita6qpq', formObject)
+			.then(function(response) {
+			  console.log('Éxito:', response);
+			  alert('¡Mensaje enviado con éxito!');
+			}, function(error) {
+			  console.error('Error:', error);
+			  alert('Hubo un error al enviar el mensaje.');
+			});
+		});
+	  </script>
 
 	<!-- Slider's main "init" script -->
 	<script>
