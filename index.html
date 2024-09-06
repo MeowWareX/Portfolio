@@ -65,39 +65,22 @@
 					</button>
 					<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
 						<ul class="navbar-nav alt-font">
-							<li class="nav-item"><a href="demo-branding-agency.html" class="nav-link">Home</a></li>
-							<li class="nav-item"><a href="demo-branding-agency-about.html" class="nav-link">Agency</a>
+							<li class="nav-item"><a href="#principal" class="nav-link nav-scroll-link" data-target="principal">Home</a></li>
+							<li class="nav-item"><a href="#servicios" class="nav-link nav-scroll-link" data-target="servicios">Servicios</a>
 							</li>
-							<li class="nav-item dropdown dropdown-with-icon-style02">
-								<a href="demo-branding-agency-services.html" class="nav-link">Services</a>
-								<i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink"
-									role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-									<li><a href="demo-branding-agency-services-detail.html"><i
-												class="bi bi-megaphone text-dark-gray"></i>Branding solutions</a></li>
-									<li><a href="demo-branding-agency-services-detail.html"><i
-												class="bi bi-vector-pen text-dark-gray"></i>Design research</a></li>
-									<li><a href="demo-branding-agency-services-detail.html"><i
-												class="bi bi-laptop text-dark-gray"></i>Web development</a></li>
-									<li><a href="demo-branding-agency-services-detail.html"><i
-												class="bi bi-bag-heart text-dark-gray"></i>eCommerce solutions</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a href="demo-branding-agency-portfolio.html"
-									class="nav-link">Portfolio</a></li>
-							<li class="nav-item"><a href="demo-branding-agency-contact.html"
-									class="nav-link">Contact</a></li>
+							<li class="nav-item"><a href="#contacto" class="nav-link nav-scroll-link" data-target="contacto">Contactanos</a></li>
+							<li class="nav-item"><a href="#nosotros" class="nav-link nav-scroll-link" data-target="nosotros">Sobre nosotros</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-auto text-end d-none d-sm-flex">
 					<div class="header-icon">
 						<div class="header-button">
-							<a href="mailto:info@domain.com"
+							<a href="mailto:meowwaredev@gmail.com"
 								class="btn border-1 btn-transparent-light-gray btn-medium left-icon btn-switch-text">
 								<span>
 									<span><i class="fa-regular fa-envelope"></i></span>
-									<span class="btn-double-text" data-text="Send a message">Send a message</span>
+									<span class="btn-double-text" data-text="Envianos un mensaje">Envianos un mensaje</span>
 								</span>
 							</a>
 						</div>
@@ -189,7 +172,7 @@
 		style="background-image:url('images/demo-spa-salon-home-bg-01.jpg'); " id="servicios">
 		<div class="position-absolute right-minus-50px overlap-section z-index-minus-1 d-none d-lg-inline-block"
 			data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
-			<img src="images/1/services.webp" alt="">
+			<img src="images/1/services.webp" alt="Services Image">
 		</div>
 		<div class="position-absolute left-minus-100px top-50 z-index-minus-1 d-none d-lg-inline-block"
 			data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
@@ -462,7 +445,7 @@
 	</section>
 
 	<!-- Contact -->
-	<section id="contact" class="bg-very-light-gray background-position-right-top background-no-repeat"
+	<section id="contacto" class="bg-very-light-gray background-position-right-top background-no-repeat"
 		style="background-image: url('images/1/contact.jpg')">
 		<div class="container">
 			<div class="row justify-content-center"
@@ -533,7 +516,7 @@
 									</div>
 									<div class="feature-box-content">
 										<span>¿En qué podemos ayudarle?</span>
-										<span class="d-block fw-500 fs-18"><a href="mailto:help@yourdomain.com"
+										<span class="d-block fw-500 fs-18"><a href="mailto:meowwaredev@gmail.com"
 												class="text-dark-gray">meowwaredev@gmail.com</a></span>
 									</div>
 								</div>
@@ -694,18 +677,20 @@
 				<!-- start footer column -->
 				<div class="col-lg-7 md-mb-10px text-center text-lg-start">
 					<ul class="footer-navbar lh-normal">
-						<li class="nav-item"><a href="#principal" class="inner-link nav-link">Home</a></li>
-						<li class="nav-item"><a href="#servicios" class="inner-link nav-link">Servicios</a></li>
-						<li class="nav-item"><a href="#contact" class="inner-link nav-link">Contactanos</a></li>
-						<li class="nav-item"><a href="#nosotros" class="inner-link nav-link">Sobre nosostros</a></li>
-						<!-- <li class="nav-item"><a href="#review" class="inner-link nav-link">Review</a></li>
-						<li class="nav-item"><a href="#pricing" class="inner-link nav-link">Pricing</a></li> -->
+						<li class="nav-item"><a href="#principal" class="inner-link nav-link nav-scroll-link"
+								data-target="principal">Home</a></li>
+						<li class="nav-item"><a href="#servicios" class="inner-link nav-link nav-scroll-link"
+								data-target="servicios">Servicios</a></li>
+						<li class="nav-item"><a href="#contacto" class="inner-link nav-link nav-scroll-link"
+								data-target="contacto">Contactanos</a></li>
+						<li class="nav-item"><a href="#nosotros" class="inner-link nav-link nav-scroll-link"
+								data-target="nosotros">Sobre nosostros</a></li>
 					</ul>
 				</div>
 				<!-- end footer column -->
 				<!-- start footer column -->
 				<div class="col-lg-5 last-paragraph-no-margin text-center text-lg-end">
-					<p>&copy; 2024 MeowWareX</a></p>
+					<p id="copyright"></p>
 				</div>
 				<!-- end footer column -->
 			</div>
@@ -727,30 +712,35 @@
 	<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
 	<script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
 
+	<!-- Custom js -->
+	<script src="js/custom-link.js"></script>
+	<script src="js/custom-date.js"></script>
+
 	<!-- Script email sender -->
 	<!-- <script src="js/email-sender.js"></script> -->
 
-	<script>
-		(function() {
-		  emailjs.init("r8F5vaNt1dMwlDO9F");
+	<!-- Script emailJs -->
+	<!-- <script>
+		(function () {
+			emailjs.init("r8F5vaNt1dMwlDO9F");
 		})();
-	
-		document.getElementById('contact-form').addEventListener('submit', function(event) {
-		  event.preventDefault();
-	
-		  const formData = new FormData(this);
-		  const formObject = Object.fromEntries(formData);
-	
-		  emailjs.send('service_4rw77gq', 'template_ita6qpq', formObject)
-			.then(function(response) {
-			  console.log('Éxito:', response);
-			  alert('¡Mensaje enviado con éxito!');
-			}, function(error) {
-			  console.error('Error:', error);
-			  alert('Hubo un error al enviar el mensaje.');
-			});
+
+		document.getElementById('contact-form').addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			const formData = new FormData(this);
+			const formObject = Object.fromEntries(formData);
+
+			emailjs.send('service_4rw77gq', 'template_ita6qpq', formObject)
+				.then(function (response) {
+					console.log('Éxito:', response);
+					alert('¡Mensaje enviado con éxito!');
+				}, function (error) {
+					console.error('Error:', error);
+					alert('Hubo un error al enviar el mensaje.');
+				});
 		});
-	  </script>
+	</script> -->
 
 	<!-- Slider's main "init" script -->
 	<script>
