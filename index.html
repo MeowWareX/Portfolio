@@ -67,8 +67,8 @@
 						<ul class="navbar-nav alt-font">
 							<li class="nav-item"><a href="#principal" class="nav-link nav-scroll-link"
 									data-target="principal">Home</a></li>
-							<li class="nav-item"><a href="#servicios" class="nav-link nav-scroll-link"
-									data-target="servicios">Servicios</a>
+							<li class="nav-item"><a href="#portfolio" class="nav-link nav-scroll-link"
+									data-target="portfolio">Portafolio</a>
 							</li>
 							<li class="nav-item"><a href="#contacto" class="nav-link nav-scroll-link"
 									data-target="contacto">Contactanos</a></li>
@@ -169,233 +169,126 @@
 		</div>
 	</section>
 
-	<!-- Services -->
-	<section class="background-repeat position-relative overlap-height z-index-1"
-		style="background-image:url('images/demo-spa-salon-home-bg-01.jpg'); " id="servicios">
-		<div class="position-absolute right-minus-50px overlap-section z-index-minus-1 d-none d-lg-inline-block"
-			data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
-			<img src="images/1/services.webp" alt="Services Image">
-		</div>
-		<div class="position-absolute left-minus-100px top-50 z-index-minus-1 d-none d-lg-inline-block"
-			data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
-			<img src="images/1/services-2.png" alt="">
-		</div>
+	<!-- Portfolio -->
+	<section id="portfolio">
 		<div class="container overlap-gap-section">
-			<div class="row justify-content-center mb-2">
-				<div class="col-lg-6 col-md-8 text-center"
-					data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1],  "delay":0, "duration": 600, "staggervalue": 300, "easing": "easeOutQuad" }'>
-					<span class="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">Explora
-						nuestras</span>
-					<h3 class="alt-font ls-minus-1px text-dark-gray w-65 xl-w-80 sm-w-100 mx-auto">Soluciones
-						tecnológicas
-					</h3>
+			<div class="row justify-content-center align-items-center mb-6" data-anime='{ "el": "childs", "translateY": [30, 1], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue":200, "easing": "easeOutQuad" }'>
+				<div class="col-auto pe-25px border-2 border-end border-color-red sm-border-end-0 sm-pe-15px">
+					<span class="text-uppercase text-dark-gray fw-600 ls-1px">Desarrollo Web Personalizado</span>
+				</div>
+				<div class="col-12 col-md-auto ps-25px sm-ps-15px text-center">
+					<h3 class="fw-600 text-dark-gray ls-minus-1px mb-0">Portafolio</h3>
 				</div>
 			</div>
-			<div class="row mb-5 xs-mb-15px">
-				<div class="col-12 position-relative">
-					<div class="outside-box-right-40 sm-outside-box-right-0">
-						<div class="swiper magic-cursor"
-							data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "autoplay": { "delay": 3000, "disableOnInteraction": false },  "pagination": { "el": ".slider-three-slide-pagination", "clickable": true, "dynamicBullets": false }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "992": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
-							<div class="swiper-wrapper pt-20px pb-20px">
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px" src="./images/TablerBuildingStore.png"
-													alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Tiendas</span>
-												<p class="text-light-opacity lh-30">Impulsa y automatiza las ventas de
-													tu negocio con una tienda en línea. productos y servicios.</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img overflow-hidden">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/tienda1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">01</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px"
-													src="./images/MaterialSymbolsEventNote.png" alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Reservas</span>
-												<p class="text-light-opacity lh-30">Facilita la programación de citas,
-													reservas de hotel, restaurantes y actividades turísticas.
-												</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/reservas1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">02</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px"
-													src="./images/MaterialSymbolsPermDeviceInformationOutlineRounded.png"
-													alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Informativas</span>
-												<p class="text-light-opacity lh-30">Muestra tu portafolio, información
-													de contacto, imágenes y videos relevantes.</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/informative1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">03</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px" src="./images/MageHeartHealthFill.png"
-													alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Consultas
-													de salud</span>
-												<p class="text-light-opacity lh-30">Proporciona asesoría médica o
-													terapéutica a través de videoconferencias.
-												</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img overflow-hidden">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/medical1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">01</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px" src="./images/MdiBookEducationOutline.png"
-													alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Educación
-													en línea</span>
-												<p class="text-light-opacity lh-30">Ofrece cursos y materiales
-													educativos a través de una plataforma digital.
-												</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/education1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">02</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-								<!-- start slider item -->
-								<div class="swiper-slide">
-									<div
-										class="row g-0 services-box-style-02 border-radius-6px overflow-hidden hover-box dark-hover">
-										<div class="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10"
-											style="height: 400px;">
-											<div
-												class="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-												<img class="w-75px lg-w-65px"
-													src="./images/EosIconsSystemReRegistered.png" alt="">
-											</div>
-											<div
-												class="services-box-content last-paragraph-no-margin position-relative z-index-9">
-												<span
-													class="d-inline-block alt-font text-dark-gray fs-24 mb-5px">Plataformas
-													de registros y servicios</span>
-												<p class="text-light-opacity lh-30">Crea sistemas de registro en línea
-													para eventos, cursos o consultas de salud.
-												</p>
-											</div>
-											<div class="box-overlay bg-dark-gray"></div>
-										</div>
-										<div class="col-sm-6 services-box-img">
-											<div class="h-100 cover-background position-relative xs-h-300px"
-												style="background-image: url(./images/register1.png)">
-												<!-- <span
-													class="position-absolute left-minus-30px bottom-50px fs-100 lg-fs-80 xs-fs-90 fw-600 text-very-light-gray xl-bottom-25px md-left-minus-20px">03</span> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end slider item -->
-							</div>
+			<div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 transition-inner-all justify-content-center" data-anime='{ "el": "childs", "translateY": [20, 0], "opacity": [0,1], "duration": 600, "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
+				<!-- start fancy text box item -->
+				<div class="col mb-20px">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/Construction-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Construcción</span>
+							<!-- <p class="lh-26">Advanced hair treatment</p> -->
 						</div>
 					</div>
 				</div>
-			</div>
+				<!-- end fancy text box item -->
+				<!-- start fancy text box item -->
+				<div class="col mb-20px">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/CreativeAgency-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Agencia</span>
+							<!-- <p class="lh-26">Different amounts of pressure</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- end fancy text box item -->
+				<!-- start fancy text box item -->
+				<div class="col mb-20px">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/FashionStore-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Tienda de Belleza</span>
+							<!-- <p class="lh-26">Rethink your lash look</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- end fancy text box item -->
+				<!-- start fancy text box item -->
+				<div class="col md-mb-20px">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/Hotel-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Hotel</span>
+							<!-- <p class="lh-26">Believe in your beauty</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- end fancy text box item -->
+				<!-- start fancy text box item -->
+				<div class="col sm-mb-20px">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/Restaurant-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Restaurante</span>
+							<!-- <p class="lh-26">Fabulous in every way</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- end fancy text box item -->
+				<!-- start fancy text box item -->
+				<div class="col">
+					<div class="services-box-style-01 hover-box">
+						<div class="position-relative box-image border-radius-6px overflow-hidden">
+							<a href="https://meowwarex.github.io/Wedding-Project/" target="_blank">
+								<img src="https://via.placeholder.com/755x510" alt="">
+								<div class="box-overlay bg-black-transparent-medium"></div>
+								<span class="d-flex justify-content-center align-items-center mx-auto icon-box absolute-middle-center z-index-1 w-65px h-65px rounded-circle border border-color-transparent-white border-1"><i class="bi bi-arrow-right-short text-white icon-very-medium d-flex"></i></span>
+							</a>
+						</div>
+						<div class="p-25px last-paragraph-no-margin text-center">
+							<span class="fs-20 text-dark-gray fw-600">Matrimonio</span>
+							<!-- <p class="lh-26">Especially crafted to suit</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- end fancy text box item -->
+			</div> 
 		</div>
 	</section>
 
 	<!-- Swiper -->
-	<section class="background-position-center-top pt-0"
-		style="background-image:url('images/demo-spa-salon-home-bg-01.jpg');">
+	<section class="background-position-center-top pt-0">
 		<div class="container-fluid">
 			<div class="row position-relative">
 				<div class="col swiper swiper-width-auto text-center pb-20px md-pb-20px feather-shadow"
@@ -534,11 +427,11 @@
 				<div class="col-lg-6 col-md-9 position-relative md-mb-15 text-center text-lg-start"
 					data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 15, "easing": "easeOutQuad" }'>
 					<div class="absolute-middle-center z-index-9 counter-style-02 text-center">
-						<span
+						<!-- <span
 							class="fs-160 fw-800 text-dark-gray ls-minus-10px xs-ls-minus-5px position-relative lg-fs-130 xs-fs-75">28<sub
-								class="align-top fs-80 lg-fs-70 text-dark-gray position-relative top-minus-3px">+</sub></span>
-						<span class="d-block mx-auto fs-20 fw-500 lh-26 w-70 text-center text-dark-gray xs-w-100">Years
-							working experience</span>
+								class="align-top fs-80 lg-fs-70 text-dark-gray position-relative top-minus-3px">+</sub></span> -->
+						<span class="d-block mx-auto fs-30 fw-800 lh-26 w-70 text-center text-dark-gray xs-w-100">
+							Soluciones creativas diseñadas para superar tus expectativas</span>
 					</div>
 					<img src="images/demo-corporate-03.png" alt="">
 					<img src="images/1/trophe.webp"
