@@ -1,0 +1,21 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.1
+      with:
+        server: ftp://92.112.189.188
+        username: u329783042.ivanjocc
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
