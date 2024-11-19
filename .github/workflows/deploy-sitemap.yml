@@ -20,15 +20,13 @@ jobs:
           echo '<url><loc>https://meowwarex.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>' >> sitemap.xml
           echo '</urlset>' >> sitemap.xml
 
-      - name: Deploy sitemap to Hostinger
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          apt-get update && apt-get install -y lftp
-          lftp -c "
-          open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST;
-          put sitemap.xml -o ./sitemap.xml;
-          bye;
-          "
+      - name: Deploy sitemap.xml to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@4.4.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: .  
+          server-dir: ./
+          exclude: |
+            !sitemap.xml  # Sube solo sitemap.xml
