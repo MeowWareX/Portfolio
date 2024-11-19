@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Generate sitemap.xml
       - name: Generate sitemap.xml
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
@@ -20,6 +22,7 @@ jobs:
           echo '<url><loc>https://meowwarex.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>' >> sitemap.xml
           echo '</urlset>' >> sitemap.xml
 
+      # Step 3: Generate robots.txt
       - name: Generate robots.txt
         run: |
           echo 'User-agent: *' > robots.txt
@@ -28,6 +31,7 @@ jobs:
           echo 'Allow: /public/' >> robots.txt
           echo 'Sitemap: https://meowwarex.com/sitemap.xml' >> robots.txt
 
+      # Step 4: Deploy sitemap.xml and robots.txt to Hostinger
       - name: Deploy sitemap.xml and robots.txt to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
@@ -37,5 +41,9 @@ jobs:
           local-dir: ./
           server-dir: ./
           exclude: |
-            !sitemap.xml
-            !robots.txt  # Subir solo sitemap.xml y robots.txt
+            .git/**                # Excluye la carpeta .git completa
+            node_modules/**        # Excluye node_modules (si aplica)
+            **/*.scss              # Excluye archivos .scss
+            !sitemap.xml           # Incluye explícitamente sitemap.xml
+            !robots.txt            # Incluye explícitamente robots.txt
+          dry-run: false           # Cambia a true para probar sin subir archivos
