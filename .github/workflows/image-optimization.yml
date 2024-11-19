@@ -1,0 +1,34 @@
+name: Optimize Images
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  optimize-images:
+    name: Optimize Images
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run Image Optimization
+      uses: calibreapp/image-actions@v1.1.3
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        paths: |
+          images/** # Optimiza todas las imágenes dentro de 'images/'
+          img/**    # Optimiza todas las imágenes dentro de 'img/'
+        quality: 80 
+        speed: 3 
+        stripMetadata: true 
+
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'Optimize images automatically'
