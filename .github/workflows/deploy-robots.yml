@@ -1,0 +1,41 @@
+name: Generate and Deploy Sitemap & Robots
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate sitemap.xml
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          echo '<url><loc>https://meowwarex.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>' >> sitemap.xml
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Generate robots.txt
+        run: |
+          echo 'User-agent: *' > robots.txt
+          echo 'Disallow: /admin/' >> robots.txt
+          echo 'Disallow: /login/' >> robots.txt
+          echo 'Allow: /public/' >> robots.txt
+          echo 'Sitemap: https://meowwarex.com/sitemap.xml' >> robots.txt
+
+      - name: Deploy sitemap.xml and robots.txt to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ./
+          exclude: |
+            !sitemap.xml
+            !robots.txt  # Subir solo sitemap.xml y robots.txt
