@@ -1,34 +1,30 @@
-name: Optimize Images
+name: Compress Images
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
 
 jobs:
-  optimize-images:
-    name: Optimize Images
+  compress-images:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    name: Compress Images
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Run Image Optimization
-      uses: calibreapp/image-actions@v1
-      with:
-        githubToken: ${{ secrets.GITHUB_TOKEN }}
-        paths: |
-          images/**
-          img/**   
-        quality: 80
-        speed: 3
-        stripMetadata: true
-
-    - name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: 'Optimize images automatically'
+      - name: Compress Images
+        uses: photogabble/image-actions@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          paths: |
+            images/** 
+            img/**    
+          extensions: jpg,jpeg,png,webp
+          quality: 80
+          strip_metadata: true
