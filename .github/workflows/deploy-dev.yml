@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-  
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dev/
+          server: 92.112.189.188           # Dirección del servidor FTP para el subdominio dev
+          username: ${{ secrets.FTP_USER }}       # Tu nombre de usuario FTP
+          password: ${{ secrets.FTP_PASSWORD }}       # Tu contraseña FTP
+          local-dir: ./build/               # Ruta local donde están los archivos generados para dev (ajusta según tu estructura)
