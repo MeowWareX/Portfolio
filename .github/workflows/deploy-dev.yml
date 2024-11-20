@@ -19,8 +19,8 @@ jobs:
       - name: Deploy files via SFTP
         uses: appleboy/scp-action@v0.1.0
         with:
-          host: ftp.tu-dominio.com
-          username: tu_usuario_ftp
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           source: "./"        # Ruta local
           target: "/public_html/dev/" # Ruta en el servidor
