@@ -1,27 +1,21 @@
 name: Deploy to Dev Subdomain
 
-# Ejecutar cuando haya un push a la rama "dev"
 on:
   push:
     branches:
       - dev
-
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Configurar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Configurar SFTP para enviar archivos
-      - name: Deploy files via SFTP
-        uses: appleboy/scp-action@v0.1.0
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          host: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          source: "./"        # Ruta local
-          target: "/public_html/dev/" # Ruta en el servidor
-          strip_components: 1 # Opcional: elimina carpetas superiores en el path
+          local-dir: ./dev/
