@@ -1,7 +1,4 @@
 RewriteEngine On
-RewriteBase /
-
-# Elimina la extensión .html de las URL
-RewriteRule ^(.*)\.html$ /$1 [R=301,L]
-
-RewriteRule ^(.*)/$ /$1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9/-]+)$ $1.html [L]
