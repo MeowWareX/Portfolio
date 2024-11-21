@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./  # Directorio donde están tus archivos (ajústalo según tu estructura)
-          remote-dir: /dev/  # Ruta en el servidor donde se desplegarán los archivos
+          server-dir: /dev/  # Ruta en el servidor donde se desplegarán los archivos
