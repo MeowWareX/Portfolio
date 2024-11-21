@@ -1,0 +1,25 @@
+name: Deploy to Dev Subdomain
+
+on:
+  push:
+    branches:
+      - demo  # La rama en la que se ejecutará este flujo de trabajo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: List files in the repository
+        run: ls -la ./  # Para verificar que los archivos están en la raíz del repositorio
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.1
+        with:
+          server: ${{ secrets.FTP_HOST }} 
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./  # Directorio donde están tus archivos (ajústalo según tu estructura)
+          server-dir: /dev/  # Ruta en el servidor donde se desplegarán los archivos
