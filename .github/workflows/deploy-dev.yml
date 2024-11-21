@@ -3,7 +3,7 @@ name: Deploy to Dev Subdomain
 on:
   push:
     branches:
-      - dev
+      - demo
 
 jobs:
   deploy:
