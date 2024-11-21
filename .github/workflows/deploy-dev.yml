@@ -3,7 +3,7 @@ name: Deploy to Dev Subdomain
 on:
   push:
     branches:
-      - demo
+      - demo  # La rama en la que se ejecutará este flujo de trabajo
 
 jobs:
   deploy:
@@ -12,11 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Asegúrate de que los archivos estén preparados (por ejemplo, ejecutando un build)
+      - name: Build project
+        run: |
+          # Si usas un framework como React o similar, el comando de construcción puede ser:
+          npm install
+          npm run build  # Ajusta según la tecnología de tu proyecto
+
+      - name: List files in build directory
+        run: ls -la ./build/   # Verifica que los archivos estén generados y listos para el despliegue
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
           server: ${{ secrets.FTP_HOST }} 
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: /dev/      
-
+          local-dir: ./build/    # Cambia esto si tu carpeta de salida tiene otro nombre (build, dist, etc.)
+          remote-dir: /dev/      # Ajusta la carpeta remota a la que deseas subir los archivos
