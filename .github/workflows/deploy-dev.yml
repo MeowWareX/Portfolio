@@ -18,5 +18,5 @@ jobs:
           server: 92.112.189.188    
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dev/        
+          local-dir: /dev/      
 
